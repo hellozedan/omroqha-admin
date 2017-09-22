@@ -49,10 +49,7 @@ export class HomeComponent implements OnInit {
     this.getNames();
   }
 
-  bbbb(){
-    console.log('aaa')
-    debugger;
-  }
+
   /**
    * Handle the nameListService observable
    */

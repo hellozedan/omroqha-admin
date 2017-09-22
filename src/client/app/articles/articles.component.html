@@ -1,6 +1,6 @@
 <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
   <data-table id="persons-grid"
-              headerTitle="Employees"
+              headerTitle="Articles"
               [items]="items"
               [itemCount]="itemCount"
               (reload)="reloadItems($event)"
@@ -10,23 +10,29 @@
               [rowTooltip]="rowTooltip"
   >
     <data-table-column
-      [property]="'name'"
-      [header]="'Name'"
+      [property]="'title'"
+      [header]="'Title'"
       [sortable]="true"
       [resizable]="true">
-    </data-table-column>
-    <data-table-column
-      [property]="'date'"
-      [header]="'Date'"
-      [sortable]="true">
       <template #dataTableCell let-item="item">
-        <span>{{item.date | date:'yyyy-MM-dd'}}</span>
+        <span>{{item.title}}</span>
       </template>
     </data-table-column>
     <data-table-column
-      property="phoneNumber"
-      header="Phone number"
-      width="150px">
+      [property]="'create date'"
+      [header]="'Create Date'"
+      [sortable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.create_date | date:'yyyy-MM-dd'}}</span>
+      </template>
+    </data-table-column>
+    <data-table-column
+      [property]="'last update'"
+      [header]="'Last Update Date'"
+      [sortable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.last_update | date:'yyyy-MM-dd'}}</span>
+      </template>
     </data-table-column>
     <data-table-column
       [property]="'jobTitle'"
