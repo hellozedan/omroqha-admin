@@ -7,9 +7,18 @@ import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
 import {DataTableModule} from 'angular-4-data-table';
 import {RemoteService} from './articles-remote-service';
 import {ArticleInfoComponent} from "./article-info.component";
+import {RouterModule, Routes} from "@angular/router";
+
+
+const appRoutes: Routes = [
+  { path: 'articles/:id',      component: ArticleInfoComponent },
+];
 
 @NgModule({
-  imports: [ArticlesRoutingModule, SharedModule, AgmCoreModule.forRoot({
+  imports: [ RouterModule.forRoot(
+    appRoutes,
+    { enableTracing: true } // <-- debugging purposes only
+  ),ArticlesRoutingModule, SharedModule, AgmCoreModule.forRoot({
     apiKey: 'AIzaSyB-ziqpuMMH52jxcevWRuFiRPeuD09gn9U'
   }), FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(), DataTableModule],
   declarations: [ArticlesComponent,ArticleInfoComponent],
