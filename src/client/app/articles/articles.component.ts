@@ -26,8 +26,8 @@ export class ArticlesComponent implements OnInit {
       active:true
     }
   ];
-  //items=[]
-  items  = this.articlesArray;
+  items=[]
+  // items  = this.articlesArray;
   itemCount = 0;
   ngOnInit() {
   }
@@ -36,10 +36,10 @@ export class ArticlesComponent implements OnInit {
   }
 
   reloadItems(params) {
-    /*this.remoteService.query(params).then(result => {
+    this.remoteService.query(params).then(result => {
       this.items = result.items;
       this.itemCount = result.count;
-    });*/
+    });
   }
 
   rowClick (e:any) {
