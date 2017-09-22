@@ -6,15 +6,8 @@ import {ArticleInfoComponent} from './article-info.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'articles', component: ArticlesComponent,
-        children: [
-          {
-            path: 'articles/:articleId',
-            component: ArticleInfoComponent
-            //loadChildren: '/app/editor/editor.module'
-          },
-        ]
-      }
+      { path: 'articles', component: ArticlesComponent},
+      {path: 'articles/:articleId', component: ArticleInfoComponent}
     ])
   ],
   exports: [RouterModule]

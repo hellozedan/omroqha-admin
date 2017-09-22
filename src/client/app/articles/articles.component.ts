@@ -27,13 +27,13 @@ export class ArticlesComponent implements OnInit {
       active:true
     }
   ];
-  items=[]
+  items=[];
   // items  = this.articlesArray;
   itemCount = 0;
   ngOnInit() {
   }
 
-  constructor(private remoteService: RemoteService) {
+  constructor(private remoteService: RemoteService, private router: Router) {
 
   }
 
@@ -45,6 +45,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   rowClick (e:any) {
+    this.router.navigate(['articles',e.row.item._id]);
       console.log(e.row.item._id);
   }
 }
