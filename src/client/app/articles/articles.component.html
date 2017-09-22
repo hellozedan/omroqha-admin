@@ -10,6 +10,15 @@
               [rowTooltip]="rowTooltip"
   >
     <data-table-column
+      [property]="'code'"
+      [header]="'Code'"
+      [sortable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.articleId}}</span>
+      </template>
+    </data-table-column>
+
+    <data-table-column
       [property]="'title'"
       [header]="'Title'"
       [sortable]="true"
@@ -23,7 +32,7 @@
       [header]="'Create Date'"
       [sortable]="true">
       <template #dataTableCell let-item="item">
-        <span>{{item.create_date | date:'yyyy-MM-dd'}}</span>
+        <span>{{item.createdAt | date:'yyyy-MM-dd'}}</span>
       </template>
     </data-table-column>
     <data-table-column
@@ -31,14 +40,10 @@
       [header]="'Last Update Date'"
       [sortable]="true">
       <template #dataTableCell let-item="item">
-        <span>{{item.last_update | date:'yyyy-MM-dd'}}</span>
+        <span>{{item.lastUpdated | date:'yyyy-MM-dd'}}</span>
       </template>
     </data-table-column>
-    <data-table-column
-      [property]="'jobTitle'"
-      [header]="'Job title'"
-      [visible]="false">
-    </data-table-column>
+
     <data-table-column
       [property]="'active'"
       [header]="'Active'"

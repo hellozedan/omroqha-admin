@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RemoteService} from "./articles-remote-service";
 
+
 /**
  * This class represents the lazy loaded HomeComponent.
  */
@@ -33,12 +34,15 @@ export class ArticleInfoComponent implements OnInit {
 
   //Get Article by ID
   GetArticleById(_id:string){
-    this.remoteService.GetArticleById(_id).then(res => {
+  /*  this.remoteService.GetArticleById(_id).then(res => {
       this.selected_article = res;
-  })}
+  });*/
+    return this.selected_article;
+  }
 
   ngOnInit() {
     this.GetArticleById(this.params_id);
+    //this.GetArticleById('59c52bccbbe60621905873d7');
   }
 
   SaveChanges(){

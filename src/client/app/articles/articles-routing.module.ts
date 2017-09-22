@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ArticlesComponent } from './articles.component';
-import {ArticleInfoComponent} from "./article-info.component";
+import {ArticleInfoComponent} from './article-info.component';
 
 @NgModule({
   imports: [

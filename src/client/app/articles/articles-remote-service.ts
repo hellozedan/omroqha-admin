@@ -53,7 +53,7 @@ export class RemoteService {
   //get Article by Id
 
   GetArticleById(_id:string):any{
-    return this.http.get(BASE_URL + '/api/articles?' + _id)
+    return this.http.get(BASE_URL + '/api/articles?articleId:' + _id)
     // ...and calling .json() on the response to return data
       .map((res:Response) => res.json())
       //...errors if any

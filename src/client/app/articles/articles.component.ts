@@ -43,8 +43,6 @@ export class ArticlesComponent implements OnInit {
   }
 
   rowClick (e:any) {
-
-    this._router.navigate('/articles',e.row.item._id);
-     console.log(e.row.item._id);
+    //  console.log(e.row.item._id);
   }
 }

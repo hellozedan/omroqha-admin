@@ -1,5 +1,7 @@
 
-<h2> Article Id: {{selected_article._id}}</h2>
+
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+<h5> Article Id: {{selected_article._id}}</h5>
 <div class="form-group">
   <label for="titleTextarea">Title</label>
   <textarea class="form-control" id="titleTextarea" rows="3"  [(ngModel)] ="selected_article.title"></textarea>
@@ -7,9 +9,11 @@
 
 <div class="form-group">
   <label for="subtitleTextarea">Sub Title</label>
-  <textarea class="form-control" id="subtitleTextarea" rows="3"  [(ngModel)] ="selected_article.subtitle"></textarea>
+  <textarea class="form-control" id="subtitleTextarea" rows="3"  [(ngModel)] ="selected_article.subTitle"></textarea>
 </div>
 
 <div [froalaEditor] [(froalaModel)]="selected_article.content"></div>
 <div [froalaView]="selected_article.content"></div>
 <button (click)="SaveChanges()">Save</button>
+
+</div>
