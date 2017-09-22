@@ -158,6 +158,7 @@
     "angular4-color-picker": "^1.4.2",
     "core-js": "^2.4.1",
     "intl": "^1.2.5",
+    "jquery": "^3.2.1",
     "ng2-flex-table": "^1.1.2",
     "ng2-smart-table": "^1.2.2",
     "rxjs": "^5.4.2",

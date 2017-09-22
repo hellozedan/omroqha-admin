@@ -2,9 +2,19 @@
 # yarn lockfile v1
 
 
+"@agm/core@^1.0.0-beta.1":
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-1.0.0-beta.1.tgz#8ba7286e564bfaea8390dc5a8163a064100abc6b"
+
 "@angular/animations@^4.3.0":
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.3.6.tgz#bf9283ec7c8c98b32f569d84dcda10890fdc0262"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/common@^4.0.1":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.4.3.tgz#f92ac68b02bec5f0e6d3603a843294dc96c96074"
   dependencies:
     tslib "^1.7.1"
 
@@ -25,6 +35,12 @@
 "@angular/compiler@^4.3.0":
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.3.6.tgz#be170df098b71e835ccedf168d5fb7b23e5045b8"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/core@^4.0.1":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.3.tgz#e71d2b07beaacbab48ab7f51d4e2286ea5d70e15"
   dependencies:
     tslib "^1.7.1"
 
@@ -49,6 +65,12 @@
 "@angular/platform-browser-dynamic@^4.3.0":
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.3.6.tgz#9eabf826f119c98f85c2a96edcb18ab00b4efb1c"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/platform-browser@^4.0.1":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.4.3.tgz#23f9a45bd3dc7f44d97877fbf8e6032decfc9dcb"
   dependencies:
     tslib "^1.7.1"
 
@@ -432,6 +454,20 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4, amdefine@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular2-google-map@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/angular2-google-map/-/angular2-google-map-0.1.8.tgz#0cd28d842bbc56f116e7180e9e9cce6e0ca96476"
+
+angular4-color-picker@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/angular4-color-picker/-/angular4-color-picker-1.4.2.tgz#6ee06dabc12d589ead5660ccba6ad052c95ba22a"
+  dependencies:
+    "@angular/common" "^4.0.1"
+    "@angular/core" "^4.0.1"
+    "@angular/platform-browser" "^4.0.1"
+    rxjs "^5.2.0"
+    zone.js "^0.8.5"
 
 ansi-regex@^0.2.0, ansi-regex@^0.2.1:
   version "0.2.1"
@@ -5586,6 +5622,12 @@ rx@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
+rxjs@^5.2.0:
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
+  dependencies:
+    symbol-observable "^1.0.1"
+
 rxjs@^5.4.2:
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.2.tgz#2a3236fcbf03df57bae06fd6972fd99e5c08fcf7"
@@ -6974,3 +7016,7 @@ yn@^2.0.0:
 zone.js@0.8.12:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.12.tgz#86ff5053c98aec291a0bf4bbac501d694a05cfbb"
+
+zone.js@^0.8.5:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.17.tgz#4c5e5185a857da8da793daf3919371c5a36b2a0b"
