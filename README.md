@@ -47,7 +47,7 @@ $ cd angular-seed
 $ npm install
 # fast install (via Yarn, https://yarnpkg.com)
 $ yarn install  # or yarn
-
+y
 # watches your files and uses livereload by default
 $ npm start
 
@@ -316,185 +316,185 @@ Forks of this project demonstrate how to extend and integrate with other librari
 
 ```
 .
-├── .docker
-│   ├── dist-build.development.dockerfile  <- Dockerfile for development environment
-│   └── dist-build.production.dockerfile   <- Dockerfile for production environment
-├── .dockerignore              <- ignore file for the docker builds
-├── LICENSE
-├── README.md
-├── appveyor.yml
-├── docker-compose.production.yml  <- docker-compose file for production environment
-├── docker-compose.yml.        <- docker-compose file for development environment
-├── gulpfile.ts                <- configuration of the gulp tasks
-├── karma.conf.js              <- configuration of the test runner
-├── package.json               <- dependencies of the project
-├── protractor.conf.js         <- e2e tests configuration
-├── src                        <- source code of the application
-│   └── client
-│       ├── app
-│       │   ├── about
-│       │   │   ├── about.component.css
-│       │   │   ├── about.component.e2e-spec.ts
-│       │   │   ├── about.component.html
-│       │   │   ├── about.component.spec.ts
-│       │   │   ├── about.component.ts
-│       │   │   ├── about.module.ts
-│       │   │   └── about-routing.module.ts
-│       │   ├── app.component.e2e-spec.ts
-│       │   ├── app.component.html
-│       │   ├── app.component.spec.ts
-│       │   ├── app.component.ts
-│       │   ├── app.module.ts
-│       │   ├── app.routes.ts
-│       │   ├── home
-│       │   │   ├── home.component.css
-│       │   │   ├── home.component.e2e-spec.ts
-│       │   │   ├── home.component.html
-│       │   │   ├── home.component.spec.ts
-│       │   │   ├── home.component.ts
-│       │   │   ├── home.module.ts
-│       │   │   └── home-routing.module.ts
-│       │   ├── i18n.providers.ts
-│       │   ├── main-prod.ts
-│       │   ├── main.ts
-│       │   ├── operators.ts
-│       │   ├── shared
-│       │   │   ├── config
-│       │   │   │   └── env.config.ts
-│       │   │   ├── index.ts
-│       │   │   ├── name-list
-│       │   │   │   ├── name-list.service.spec.ts
-│       │   │   │   └── name-list.service.ts
-│       │   │   ├── navbar
-│       │   │   │   ├── navbar.component.css
-│       │   │   │   ├── navbar.component.html
-│       │   │   │   └── navbar.component.ts
-│       │   │   ├── shared.module.ts
-│       │   │   └── toolbar
-│       │   │       ├── toolbar.component.css
-│       │   │       ├── toolbar.component.html
-│       │   │       └── toolbar.component.ts
-│       │   └── system-config.ts
-│       ├── assets
-│       │   ├── data.json
-│       │   └── favicon
-│       │       ├── favicon-DEV.ico
-│       │       └── favicon-PROD.ico
-│       │   └── svg
-│       │       └── more.svg
-│       ├── css
-│       │   └── main.css
-│       ├── index.html
-│       └── tsconfig.json
-├── test-config.js             <- testing configuration
-├── test-main.js               <- karma test launcher
-├── tools
-│   ├── README.md              <- build documentation
-│   ├── config
-│   │   ├── banner-256.txt
-│   │   ├── banner.txt
-│   │   ├── project.config.ts  <- configuration of the specific project
-│   │   ├── project.tasks.json <- override composite gulp tasks
-│   │   ├── seed.config.ts     <- generic configuration of the seed project
-│   │   ├── seed.config.interfaces.ts
-│   │   ├── seed.tasks.json    <- default composite gulp tasks
-│   │   └── seed.tslint.json   <- generic tslint configuration of the seed project
-│   ├── config.ts              <- exported configuration (merge both seed.config and project.config, project.config overrides seed.config)
-│   ├── debug.ts
-│   ├── env                    <- environment configuration
-│   │   ├── base.ts
-│   │   ├── dev.ts
-│   │   ├── env-config.interface.ts
-│   │   └── prod.ts
-│   ├── manual_typings
-│   │   ├── project            <- manual ambient typings for the project
-│   │   │   └── sample.package.d.ts
-│   │   └── seed               <- seed manual ambient typings
-│   │       ├── autoprefixer.d.ts
-│   │       ├── cssnano.d.ts
-│   │       ├── express-history-api-fallback.d.ts
-│   │       ├── istream.d.ts
-│   │       ├── karma.d.ts
-│   │       ├── merge-stream.d.ts
-│   │       ├── open.d.ts
-│   │       ├── operators.d.ts
-│   │       ├── slash.d.ts
-│   │       ├── systemjs-builder.d.ts
-│   │       └── tildify.d.ts
-│   ├── tasks                  <- gulp tasks
-│   │   ├── assets_task.ts
-│   │   ├── css_task.ts
-│   │   ├── project            <- project specific gulp tasks
-│   │   │   └── sample.task.ts
-│   │   └── seed               <- seed generic gulp tasks. They can be overriden by the project specific gulp tasks
-│   │   │   ├── build.assets.dev.ts
-│   │   │   ├── build.assets.prod.ts
-│   │   │   ├── build.bundle.rxjs.ts
-│   │   │   ├── build.bundles.app.exp.ts
-│   │   │   ├── build.bundles.app.ts
-│   │   │   ├── build.bundles.ts
-│   │   │   ├── build.docs.ts
-│   │   │   ├── build.html_css.ts
-│   │   │   ├── build.index.dev.ts
-│   │   │   ├── build.index.prod.ts
-│   │   │   ├── build.js.dev.ts
-│   │   │   ├── build.js.e2e.ts
-│   │   │   ├── build.js.prod.exp.ts
-│   │   │   ├── build.js.prod.ts
-│   │   │   ├── build.js.test.ts
-│   │   │   ├── build.sme.prod.aot.ts
-│   │   │   ├── build.sme.prod.rollup.aot.ts
-│   │   │   ├── build.sme.prod.ts
-│   │   │   ├── build.tools.ts
-│   │   │   ├── check.tools.ts
-│   │   │   ├── check.versions.ts
-│   │   │   ├── clean.all.ts
-│   │   │   ├── clean.coverage.ts
-│   │   │   ├── clean.dev.ts
-│   │   │   ├── clean.prod.ts
-│   │   │   ├── clean.tools.ts
-│   │   │   ├── clear.files.ts
-│   │   │   ├── compile.ahead.prod.ts
-│   │   │   ├── copy.prod.ts
-│   │   │   ├── e2e.ts
-│   │   │   ├── generate.manifest.ts
-│   │   │   ├── karma.run.ts
-│   │   │   ├── karma.run.with_coverage.ts
-│   │   │   ├── karma.watch.ts
-│   │   │   ├── minify.bundles.ts
-│   │   │   ├── print.banner.ts
-│   │   │   ├── serve.coverage.ts
-│   │   │   ├── serve.coverage.watch.ts
-│   │   │   ├── serve.docs.ts
-│   │   │   ├── server.prod.ts
-│   │   │   ├── server.start.ts
-│   │   │   ├── start.deving.ts
-│   │   │   ├── tslint.ts
-│   │   │   ├── watch.dev.ts
-│   │   │   ├── watch.e2e.ts
-│   │   │   ├── watch.test.ts
-│   │   │   └── webdriver.ts
-│   │   ├── task.ts
-│   │   └── typescript_task.ts
-│   ├── utils                  <- build utils
-│   │   ├── project            <- project specific gulp utils
-│   │   │   └── sample_util.ts
-│   │   ├── project.utils.ts
-│   │   ├── seed               <- seed specific gulp utils
-│   │   │   ├── clean.ts
-│   │   │   ├── code_change_tools.ts
-│   │   │   ├── karma.start.ts
-│   │   │   ├── server.ts
-│   │   │   ├── sme.ts
-│   │   │   ├── tasks_tools.ts
-│   │   │   ├── template_locals.ts
-│   │   │   ├── tsproject.ts
-│   │   │   └── watch.ts
-│   │   └── seed.utils.ts
-│   └── utils.ts
-├── tsconfig.json              <- configuration of the typescript project (ts-node, which runs the tasks defined in gulpfile.ts)
-├── tslint.json                <- tslint configuration
-└── yarn.lock
+â”œâ”€â”€ .docker
+â”‚Â Â  â”œâ”€â”€ dist-build.development.dockerfile  <- Dockerfile for development environment
+â”‚Â Â  â””â”€â”€ dist-build.production.dockerfile   <- Dockerfile for production environment
+â”œâ”€â”€ .dockerignore              <- ignore file for the docker builds
+â”œâ”€â”€ LICENSE
+â”œâ”€â”€ README.md
+â”œâ”€â”€ appveyor.yml
+â”œâ”€â”€ docker-compose.production.yml  <- docker-compose file for production environment
+â”œâ”€â”€ docker-compose.yml.        <- docker-compose file for development environment
+â”œâ”€â”€ gulpfile.ts                <- configuration of the gulp tasks
+â”œâ”€â”€ karma.conf.js              <- configuration of the test runner
+â”œâ”€â”€ package.json               <- dependencies of the project
+â”œâ”€â”€ protractor.conf.js         <- e2e tests configuration
+â”œâ”€â”€ src                        <- source code of the application
+â”‚Â Â  â””â”€â”€ client
+â”‚Â Â      â”œâ”€â”€ app
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ about
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ about.component.css
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ about.component.e2e-spec.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ about.component.html
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ about.component.spec.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ about.component.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ about.module.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â””â”€â”€ about-routing.module.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ app.component.e2e-spec.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ app.component.html
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ app.component.spec.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ app.component.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ app.module.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ app.routes.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ home
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ home.component.css
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ home.component.e2e-spec.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ home.component.html
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ home.component.spec.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ home.component.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ home.module.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â””â”€â”€ home-routing.module.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ i18n.providers.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ main-prod.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ main.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ operators.ts
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ shared
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ config
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ env.config.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ index.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ name-list
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ name-list.service.spec.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ name-list.service.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ navbar
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ navbar.component.css
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ navbar.component.html
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ navbar.component.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â”œâ”€â”€ shared.module.ts
+â”‚Â Â      â”‚Â Â  â”‚Â Â  â””â”€â”€ toolbar
+â”‚Â Â      â”‚Â Â  â”‚Â Â      â”œâ”€â”€ toolbar.component.css
+â”‚Â Â      â”‚Â Â  â”‚Â Â      â”œâ”€â”€ toolbar.component.html
+â”‚Â Â      â”‚Â Â  â”‚Â Â      â””â”€â”€ toolbar.component.ts
+â”‚Â Â      â”‚Â Â  â””â”€â”€ system-config.ts
+â”‚Â Â      â”œâ”€â”€ assets
+â”‚Â Â      â”‚Â Â  â”œâ”€â”€ data.json
+â”‚Â Â      â”‚Â Â  â””â”€â”€ favicon
+â”‚Â Â      â”‚Â Â      â”œâ”€â”€ favicon-DEV.ico
+â”‚Â Â      â”‚Â Â      â””â”€â”€ favicon-PROD.ico
+â”‚Â Â      â”‚Â Â  â””â”€â”€ svg
+â”‚Â Â      â”‚Â Â      â””â”€â”€ more.svg
+â”‚Â Â      â”œâ”€â”€ css
+â”‚Â Â      â”‚Â Â  â””â”€â”€ main.css
+â”‚Â Â      â”œâ”€â”€ index.html
+â”‚Â Â      â””â”€â”€ tsconfig.json
+â”œâ”€â”€ test-config.js             <- testing configuration
+â”œâ”€â”€ test-main.js               <- karma test launcher
+â”œâ”€â”€ tools
+â”‚Â Â  â”œâ”€â”€ README.md              <- build documentation
+â”‚Â Â  â”œâ”€â”€ config
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ banner-256.txt
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ banner.txt
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ project.config.ts  <- configuration of the specific project
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ project.tasks.json <- override composite gulp tasks
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ seed.config.ts     <- generic configuration of the seed project
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ seed.config.interfaces.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ seed.tasks.json    <- default composite gulp tasks
+â”‚Â Â  â”‚Â Â  â””â”€â”€ seed.tslint.json   <- generic tslint configuration of the seed project
+â”‚Â Â  â”œâ”€â”€ config.ts              <- exported configuration (merge both seed.config and project.config, project.config overrides seed.config)
+â”‚Â Â  â”œâ”€â”€ debug.ts
+â”‚Â Â  â”œâ”€â”€ env                    <- environment configuration
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ base.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ dev.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ env-config.interface.ts
+â”‚Â Â  â”‚Â Â  â””â”€â”€ prod.ts
+â”‚Â Â  â”œâ”€â”€ manual_typings
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ project            <- manual ambient typings for the project
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ sample.package.d.ts
+â”‚Â Â  â”‚Â Â  â””â”€â”€ seed               <- seed manual ambient typings
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ autoprefixer.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ cssnano.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ express-history-api-fallback.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ istream.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ karma.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ merge-stream.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ open.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ operators.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ slash.d.ts
+â”‚Â Â  â”‚Â Â      â”œâ”€â”€ systemjs-builder.d.ts
+â”‚Â Â  â”‚Â Â      â””â”€â”€ tildify.d.ts
+â”‚Â Â  â”œâ”€â”€ tasks                  <- gulp tasks
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ assets_task.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ css_task.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ project            <- project specific gulp tasks
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ sample.task.ts
+â”‚Â Â  â”‚Â Â  â””â”€â”€ seed               <- seed generic gulp tasks. They can be overriden by the project specific gulp tasks
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.assets.dev.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.assets.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.bundle.rxjs.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.bundles.app.exp.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.bundles.app.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.bundles.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.docs.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.html_css.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.index.dev.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.index.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.js.dev.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.js.e2e.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.js.prod.exp.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.js.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.js.test.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.sme.prod.aot.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.sme.prod.rollup.aot.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.sme.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ build.tools.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ check.tools.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ check.versions.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clean.all.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clean.coverage.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clean.dev.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clean.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clean.tools.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clear.files.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ compile.ahead.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ copy.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ e2e.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ generate.manifest.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ karma.run.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ karma.run.with_coverage.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ karma.watch.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ minify.bundles.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ print.banner.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ serve.coverage.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ serve.coverage.watch.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ serve.docs.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ server.prod.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ server.start.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ start.deving.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ tslint.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ watch.dev.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ watch.e2e.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ watch.test.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ webdriver.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ task.ts
+â”‚Â Â  â”‚Â Â  â””â”€â”€ typescript_task.ts
+â”‚Â Â  â”œâ”€â”€ utils                  <- build utils
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ project            <- project specific gulp utils
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ sample_util.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ project.utils.ts
+â”‚Â Â  â”‚Â Â  â”œâ”€â”€ seed               <- seed specific gulp utils
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ clean.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ code_change_tools.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ karma.start.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ server.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ sme.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ tasks_tools.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ template_locals.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â”œâ”€â”€ tsproject.ts
+â”‚Â Â  â”‚Â Â  â”‚Â Â  â””â”€â”€ watch.ts
+â”‚Â Â  â”‚Â Â  â””â”€â”€ seed.utils.ts
+â”‚Â Â  â””â”€â”€ utils.ts
+â”œâ”€â”€ tsconfig.json              <- configuration of the typescript project (ts-node, which runs the tasks defined in gulpfile.ts)
+â”œâ”€â”€ tslint.json                <- tslint configuration
+â””â”€â”€ yarn.lock
 ```
 
 # Contributors
@@ -629,7 +629,7 @@ Here are all the awesome guys who are helping to make the project's wiki even be
  4  gforceg
  4  Brian Kotek
  3  Ezequiel Cicala
- 3  Stefan Schüller
+ 3  Stefan SchÃ¼ller
  3  Kirill Zdornyy
  3  Patrick Hillert
  3  Robert Stoll
@@ -657,7 +657,7 @@ Here are all the awesome guys who are helping to make the project's wiki even be
  1  silicakes
  1  zcsongor
  1  Adam Johannesmeyer
- 1  陳彥澄
+ 1  é™³å½¥æ¾„
  1  Alexander Yamkov
  1  Ameer Nuri
  1  Ankit Kamboj
@@ -668,15 +668,15 @@ Here are all the awesome guys who are helping to make the project's wiki even be
  1  Eddie Sun
  1  Enrico Secondulfo
  1  Eugene Serkin
- 1  Fede Guzmán
+ 1  Fede GuzmÃ¡n
  1  Frido Koch
  1  Ishara Samantha
  1  Jack Morrissey
- 1  Jesper Rønn-Jensen
- 1  José Rebelo
+ 1  Jesper RÃ¸nn-Jensen
+ 1  JosÃ© Rebelo
  1  Karasu
- 1  Marc-André Barbeau
- 1  Mathias Døhl
+ 1  Marc-AndrÃ© Barbeau
+ 1  Mathias DÃ¸hl
  1  Myrmex
  1  Pol Stafford
  1  Raphael Schmitt
@@ -688,7 +688,7 @@ Here are all the awesome guys who are helping to make the project's wiki even be
  1  The Ult
  1  Valentyn Yakymenko
  1  Vivin Antony
- 1  Yen-cheng Chen, 陳彥澄
+ 1  Yen-cheng Chen, é™³å½¥æ¾„
  1  Yonet
  1  Zakhar Gulchak
  1  ganesansays
