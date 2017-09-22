@@ -1,7 +1,7 @@
-import { join } from 'path';
+import {join} from 'path';
 
-import { SeedConfig } from './seed.config';
-import { ExtendPackages } from './seed.config.interfaces';
+import {SeedConfig} from './seed.config';
+import {ExtendPackages} from './seed.config.interfaces';
 
 /**
  * This class extends the basic seed configuration, allowing for project specific overrides. A few examples can be found
@@ -22,6 +22,11 @@ export class ProjectConfig extends SeedConfig {
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
+      {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
+      {src: 'froala-editor/js/froala_editor.pkgd.min.js', inject: 'libs'},
+      {src: 'font-awesome/css/font-awesome.min.css', inject: true},
+      {src: 'froala-editor/css/froala_editor.pkgd.min.css', inject: true},
+      {src: 'froala-editor/css/froala_style.min.css', inject: true}
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
@@ -34,20 +39,36 @@ export class ProjectConfig extends SeedConfig {
 
     this.ROLLUP_INCLUDE_DIR = [
       ...this.ROLLUP_INCLUDE_DIR,
-      // 'node_modules/@agm/core/**'
+      // 'node_modules/ng2-smart-table/**'
     ];
 
     this.ROLLUP_NAMED_EXPORTS = [
       ...this.ROLLUP_NAMED_EXPORTS,
-      //{'node_modules/immutable/dist/immutable.js': [ 'Map' ]},
+      // {'node_modules/ng2-smart-table/bundles/table.umd.js': [ 'ng2-smart-table' ]},
     ];
-
+    // 'ng2-smart-table': 'npm:ng2-smart-table/bundles/table.umd.js',
     // Add packages (e.g. ng2-translate)
-    let additionalPackages: ExtendPackages[] = [{
-      name: '@agm/core',
-      // Path to the package's bundle
-      path: 'node_modules/@agm/core/core.umd.js'
-    }];
+    let additionalPackages: ExtendPackages[] = [
+      {
+        name: 'ng2-smart-table',
+        // Path to the package's bundle
+        path: 'node_modules/ng2-smart-table/bundles/table.umd.js'
+      },
+    {
+        name: '@agm/core',
+        // Path to the package's bundle
+        path: 'node_modules/@agm/core/core.umd.js'
+      },// required for dev build
+      {
+        name: 'angular-froala-wysiwyg',
+        path: 'node_modules/angular-froala-wysiwyg/bundles/angular-froala-wysiwyg.umd.min.js'
+      },
+
+      // required for prod build
+      {
+        name: 'angular-froala-wysiwyg/*',
+        path: 'node_modules/angular-froala-wysiwyg/bundles/angular-froala-wysiwyg.umd.min.js'
+      }];
 
     this.addPackagesBundles(additionalPackages);
 
