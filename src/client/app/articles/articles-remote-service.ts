@@ -4,7 +4,7 @@ import { DataTableParams } from 'angular-4-data-table';
 import 'rxjs/add/operator/toPromise';
 
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:4040';
 
 function paramsToQueryString(params: DataTableParams) {
   let result = [];
@@ -32,7 +32,7 @@ export class RemoteService {
   constructor (private http: Http) {}
 
   query(params: DataTableParams) {
-    return this.http.get(BASE_URL + '/articles?' + paramsToQueryString(params)).toPromise()
+    return this.http.get(BASE_URL + '/api/articles?' + paramsToQueryString(params)).toPromise()
       .then((resp: Response) => ({
         items: resp.json(),
         count: Number(resp.headers.get('X-Total-Count'))
