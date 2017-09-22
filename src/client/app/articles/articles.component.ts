@@ -3,6 +3,7 @@ import {NameListService} from '../shared/name-list/name-list.service';
 import {DataTable, DataTableResource} from 'angular-4-data-table';
 import {RemoteService} from "./articles-remote-service";
 import {Router} from '@angular/router';
+import {ArticlesRoutingModule} from "./articles-routing.module";
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -33,6 +34,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   constructor(private remoteService: RemoteService) {
+
   }
 
   reloadItems(params) {
@@ -43,6 +45,6 @@ export class ArticlesComponent implements OnInit {
   }
 
   rowClick (e:any) {
-    //  console.log(e.row.item._id);
+      console.log(e.row.item._id);
   }
 }
