@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {RemoteService} from "./articles-remote-service";
+import {ParamMap, ActivatedRoute} from "@angular/router";
 
 
 /**
@@ -11,7 +12,9 @@ import {RemoteService} from "./articles-remote-service";
   templateUrl: 'article-info.component.html',
   styleUrls: [''],
 })
-export class ArticleInfoComponent implements OnInit {
+export class ArticleInfoComponent implements OnInit,OnDestroy {
+  private articleId: any;
+  private sub: any;
   selected_article=
     {
       title:'title',
@@ -25,24 +28,29 @@ export class ArticleInfoComponent implements OnInit {
   ;
 
 
-  params_id:string="";
-  constructor(private remoteService: RemoteService) {
+  params_id:string='';
+  constructor(private remoteService: RemoteService,private router: ActivatedRoute) {
   }
 
 
 
 
   //Get Article by ID
-  GetArticleById(_id:string){
-  /*  this.remoteService.GetArticleById(_id).then(res => {
+  GetArticleById(){
+   this.remoteService.getArticleById(this.articleId).then(res => {
       this.selected_article = res;
-  });*/
-    return this.selected_article;
+  });
+    // return this.selected_article;
+  }
+  ngOnInit() {
+    this.sub = this.router.params.subscribe(params => {
+      this.articleId = params['articleId']; // (+) converts string 'id' to a number
+      this.GetArticleById();
+    });
   }
 
-  ngOnInit() {
-    this.GetArticleById(this.params_id);
-    //this.GetArticleById('59c52bccbbe60621905873d7');
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   SaveChanges(){
