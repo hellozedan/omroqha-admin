@@ -10,19 +10,12 @@ import {ParamMap, ActivatedRoute, Router} from "@angular/router";
   moduleId: module.id,
   selector: 'new-article',
   templateUrl: 'new-article.component.html',
-  styleUrls: [''],
+  styleUrls: ['new-article.component.css'],
 })
 export class NewArticleComponent implements OnInit {
 
 
-  new_article=
-    {
-      title:'',
-      subTitle:'',
-      content:'',
-      active:false,
-      likes:0
-    }
+  new_article= {}
   ;
 
 
@@ -35,6 +28,7 @@ export class NewArticleComponent implements OnInit {
 
 
   ngOnInit() {
+    this.ClearChanges();
   }
 
   //newID='';
@@ -51,5 +45,14 @@ export class NewArticleComponent implements OnInit {
 
   }
 
+  ClearChanges(){
+    this.new_article= {
+      title:'',
+      subTitle:'',
+      content:'',
+      active:true,
+      likes:0
+    }
+  }
 
 }

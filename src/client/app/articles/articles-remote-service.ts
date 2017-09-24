@@ -68,4 +68,12 @@ export class RemoteService {
   }
 
 
+  //remove Article by Id
+  removeArticleById(_id) {
+    return this.http.remove(BASE_URL + '/api/articles/' + _id).toPromise()
+      .then((resp: Response) => resp.json());
+  }
+
+
+
 }

@@ -63,6 +63,23 @@
                 </span>
       </template>
     </data-table-column>
+
+    <data-table-column
+      [property]="'action'"
+      [header]="'action'"
+      [width]="100"
+
+      [resizable]="true">
+      <template #dataTableHeader let-item="item">
+        <span >Actions</span>
+      </template>
+      <template #dataTableCell let-item="item">
+                <span style="color: red">
+                <span class="glyphicon glyphicon-trash" ></span>
+                </span>
+      </template>
+    </data-table-column>
+
   </data-table>
 </div>
 

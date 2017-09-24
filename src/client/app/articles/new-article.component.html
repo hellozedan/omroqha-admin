@@ -1,4 +1,5 @@
 
+<!--
 
 <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
   <h5> Create New Article</h5>
@@ -17,3 +18,73 @@
   <button (click)="createArticle()">Create</button>
 
 </div>
+
+
+-->
+
+
+
+
+
+
+
+<div style="height: 20px;">
+
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <form action="#" method="post" class="form">
+        <div class="get-in-touch">
+          <h3 class="text-center" style="color: #5b9fb9">
+            <b>Create New Article </b></h3>
+
+
+          <hr>
+          <div class="form-group">
+            <label for="titleTextarea" class="label-for-info">Code :</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="code" [(ngModel)] ="new_article.articleId"required/>
+          </div>
+
+          <div class="form-group">
+            <label for="active" class="label-for-info">Active :</label>
+            <input type="checkbox" class="form-control" name="active" id="active"  [(ngModel)] ="new_article.active"/>
+          </div>
+
+          <div class="form-group">
+            <label for="titleTextarea" class="label-for-info">Title :</label>
+            <textarea class="form-control" id="titleTextarea" name="titleTextarea" rows="3" placeholder="Enter Title" [(ngModel)] ="new_article.title"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="subtitleTextarea" class="label-for-info">Sub Title :</label>
+            <textarea class="form-control"  name="subtitleTextarea" id="subtitleTextarea" rows="3" placeholder="Enter Sub Title" [(ngModel)] ="new_article.subTitle"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="content-editor" class="label-for-info">Article's Content :</label>
+            <div [froalaEditor] [(froalaModel)]="new_article.content" name="content-editor" id="content-editor"></div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="content-view" class="label-for-info">Content View :</label>
+            <div [froalaView]="new_article.content" name="content-view" id="content-view" class="content-view-form"></div>
+          </div>
+
+          <div class="w3-bar">
+            <button class="w3-btn  btn btn-success " (click)="createArticle()" name="save" id="save">Create</button>
+            <button class="w3-btn  btn btn-default  " (click)="ClearChanges()" name="clear" id="clear">Clear</button>
+          </div>
+
+          <!--  <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -51,4 +51,11 @@ export class ArticlesComponent implements OnInit {
     this.router.navigate(['articles',e.row.item._id]);
       console.log(e.row.item._id);
   }
+
+
+  DeleteArticle(item:any){
+    debugger
+    this.remoteService.removeArticleById(item._id)
+    console.log('hhhhhhhhh');
+  }
 }
