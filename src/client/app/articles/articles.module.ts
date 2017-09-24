@@ -8,6 +8,7 @@ import {DataTableModule} from 'angular-4-data-table';
 import {RemoteService} from './articles-remote-service';
 import {ArticleInfoComponent} from "./article-info.component";
 import {RouterModule, Routes} from "@angular/router";
+import {NewArticleComponent} from "./new-article.component";
 
 
 const appRoutes: Routes = [
@@ -21,8 +22,8 @@ const appRoutes: Routes = [
   ),ArticlesRoutingModule, SharedModule, AgmCoreModule.forRoot({
     apiKey: 'AIzaSyB-ziqpuMMH52jxcevWRuFiRPeuD09gn9U'
   }), FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(), DataTableModule],
-  declarations: [ArticlesComponent,ArticleInfoComponent],
-  exports: [ArticlesComponent,ArticleInfoComponent],
+  declarations: [ArticlesComponent,ArticleInfoComponent,NewArticleComponent],
+  exports: [ArticlesComponent,ArticleInfoComponent,NewArticleComponent],
   providers: [RemoteService]
 })
 export class ArticlesModule {

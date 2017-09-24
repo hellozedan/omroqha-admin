@@ -1,19 +1,61 @@
 
 
-<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
-<h5> Article Id: {{selected_article._id}}</h5>
-<div class="form-group">
-  <label for="titleTextarea">Title</label>
-  <textarea class="form-control" id="titleTextarea" rows="3"  [(ngModel)] ="selected_article.title"></textarea>
-</div>
-
-<div class="form-group">
-  <label for="subtitleTextarea">Sub Title</label>
-  <textarea class="form-control" id="subtitleTextarea" rows="3"  [(ngModel)] ="selected_article.subTitle"></textarea>
-</div>
-
-<div [froalaEditor] [(froalaModel)]="selected_article.content"></div>
-<div [froalaView]="selected_article.content"></div>
-<button (click)="SaveChanges()">Save</button>
+<div style="height: 20px;">
 
 </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <form action="#" method="post" class="form">
+        <div class="get-in-touch">
+          <h3 class="text-center" style="color: #5b9fb9">
+            <b>Article Information</b></h3>
+          <div class="form-group">
+            <h5> <span class="label-for-info"> <b>Article Id: </b></span>{{selected_article._id}}</h5>
+            <h5> <span class="label-for-info"> <b>Create Date: </b></span>{{selected_article.createdAt | date:'yyyy-MM-dd'}}</h5>
+            <h5> <span class="label-for-info"> <b>Update Date: </b></span>{{selected_article.lastUpdated | date:'yyyy-MM-dd'}}</h5>
+            <h5> <span class="label-for-info"> <b>Likes: </b></span>{{selected_article.likes}}</h5>
+          </div>
+
+          <hr>
+          <div class="form-group">
+            <label for="titleTextarea" class="label-for-info">Code</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="code" [(ngModel)] ="selected_article.articleId"required/>
+          </div>
+
+          <div class="form-group">
+            <label for="titleTextarea" class="label-for-info">Title</label>
+            <textarea class="form-control" id="titleTextarea" name="titleTextarea" rows="3" placeholder="Enter Title" [(ngModel)] ="selected_article.title"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="subtitleTextarea" class="label-for-info">Sub Title</label>
+            <textarea class="form-control"  name="subtitleTextarea" id="subtitleTextarea" rows="3" placeholder="Enter Sub Title" [(ngModel)] ="selected_article.subTitle"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="content-editor" class="label-for-info">Article's Content</label>
+            <div [froalaEditor] [(froalaModel)]="selected_article.content" name="content-editor" id="content-editor"></div>
+          </div>
+<hr>
+          <div class="form-group">
+            <label for="content-view" class="label-for-info">Content View</label>
+            <div [froalaView]="selected_article.content" name="content-view" id="content-view"></div>
+          </div>
+
+          <div class="w3-bar">
+            <button class="w3-btn  btn btn-success " (click)="SaveChanges()" name="save" id="save">Save</button>
+            <button class="w3-btn  btn btn-default  " (click)="ClearChanges()" name="clear" id="clear">Clear</button>
+          </div>
+
+          <!--  <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

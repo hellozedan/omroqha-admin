@@ -1,0 +1,19 @@
+
+
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+  <h5> Create New Article</h5>
+  <div class="form-group">
+    <label for="titleTextarea">Title</label>
+    <textarea class="form-control" id="titleTextarea" rows="3"  [(ngModel)] ="new_article.title"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="subtitleTextarea">Sub Title</label>
+    <textarea class="form-control" id="subtitleTextarea" rows="3"  [(ngModel)] ="new_article.subTitle"></textarea>
+  </div>
+
+  <div [froalaEditor] [(froalaModel)]="new_article.content"></div>
+  <div [froalaView]="new_article.content"></div>
+  <button (click)="createArticle()">Create</button>
+
+</div>

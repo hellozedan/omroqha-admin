@@ -38,15 +38,26 @@ export class RemoteService {
   }
 
 
+
+  // Create an Article
+  createArticle (body:any) {
+    debugger
+    let bodyString = JSON.stringify(body); // Stringify payload
+    let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+    let options       = new RequestOptions({ headers: headers }); // Create a request option
+    // console.log(BASE_URL + '/api/articles?' + body._id,body,options);
+    return this.http.post(BASE_URL + '/api/articles' , body, options).toPromise()
+      .then((resp: Response) => resp.json() );
+  }
+
   // Update an Article
   updateArticle (body:any) {
     let bodyString = JSON.stringify(body); // Stringify payload
     let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers }); // Create a request option
    // console.log(BASE_URL + '/api/articles?' + body._id,body,options);
-    return this.http.put(BASE_URL + '/api/articles?' + body._id, body, options) // ...using put request
-      .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    return this.http.put(BASE_URL + '/api/articles/' + body._id, body, options).toPromise()
+      .then((resp: Response) => {debugger; resp.json()} );
   }
 
 

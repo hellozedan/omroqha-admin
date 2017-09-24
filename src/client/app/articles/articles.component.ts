@@ -44,6 +44,9 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
+  goToCreate(){
+    this.router.navigate(['articles/new']);
+  }
   rowClick (e:any) {
     this.router.navigate(['articles',e.row.item._id]);
       console.log(e.row.item._id);

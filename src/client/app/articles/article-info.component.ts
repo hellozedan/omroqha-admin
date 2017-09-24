@@ -10,7 +10,7 @@ import {ParamMap, ActivatedRoute} from "@angular/router";
   moduleId: module.id,
   selector: 'article-info',
   templateUrl: 'article-info.component.html',
-  styleUrls: [''],
+  styleUrls: ['article-info.component.css'],
 })
 export class ArticleInfoComponent implements OnInit,OnDestroy {
   private articleId: any;
@@ -54,9 +54,18 @@ export class ArticleInfoComponent implements OnInit,OnDestroy {
   }
 
   SaveChanges(){
+    // need to save last update
+    this.selected_article.lastUpdated = Date.now();
     //TODO -- to complete this one after integration with the server
     this.remoteService.updateArticle(this.selected_article);
+    //todo NEED TO CHECK THE REULST -- if success or not
 
+
+  }
+
+
+  ClearChanges(){
+    this.GetArticleById();
   }
 
 
