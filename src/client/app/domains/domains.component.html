@@ -1,0 +1,96 @@
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+
+  <br><br>
+  <button (click)="goToCreate()">Create Domain</button>
+  <br><br>
+  <data-table id="persons-grid"
+              headerTitle="Domains"
+              [items]="items"
+              [itemCount]="itemCount"
+              (reload)="reloadItems($event)"
+
+              (rowClick)="rowClick($event)"
+              (rowDoubleClick)="rowDoubleClick($event)"
+              [rowTooltip]="rowTooltip"
+  >
+    <data-table-column
+      [property]="'code'"
+      [header]="'Code'"
+      [sortable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.domainId}}</span>
+      </template>
+    </data-table-column>
+
+    <data-table-column
+      [property]="'name'"
+      [header]="'Name'"
+      [sortable]="true"
+      [resizable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.domainName}}</span>
+      </template>
+    </data-table-column>
+    <data-table-column
+      [property]="'level'"
+      [header]="'Level'"
+      [sortable]="true"
+      [resizable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.level}}</span>
+      </template>
+    </data-table-column>
+    <data-table-column
+      [property]="'create date'"
+      [header]="'Create Date'"
+      [sortable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.createdAt | date:'yyyy-MM-dd'}}</span>
+      </template>
+    </data-table-column>
+    <!--<data-table-column
+      [property]="'last update'"
+      [header]="'Last Update Date'"
+      [sortable]="true">
+      <template #dataTableCell let-item="item">
+        <span>{{item.lastUpdated | date:'yyyy-MM-dd'}}</span>
+      </template>
+    </data-table-column>-->
+
+    <data-table-column
+      [property]="'active'"
+      [header]="'Active'"
+      [width]="100"
+      [resizable]="true">
+      <template #dataTableHeader let-item="item">
+        <span style="color: rgb(232, 0, 0)">Active</span>
+      </template>
+      <template #dataTableCell let-item="item">
+                <span style="color: grey">
+                <span class="glyphicon glyphicon-ok" *ngIf="item.active"></span>
+                <span class="glyphicon glyphicon-remove" *ngIf="!item.active"></span>
+                </span>
+      </template>
+    </data-table-column>
+
+   <!-- <data-table-column
+      [property]="'action'"
+      [header]="'action'"
+      [width]="100"
+
+      [resizable]="true">
+      <template #dataTableHeader let-item="item">
+        <span >Actions</span>
+      </template>
+      <template #dataTableCell let-item="item">
+                <span style="color: red">
+                <span class="glyphicon glyphicon-trash" ></span>
+                </span>
+      </template>
+    </data-table-column>-->
+
+  </data-table>
+</div>
+
+
+<router-outlet></router-outlet>

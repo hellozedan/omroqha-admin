@@ -1,0 +1,65 @@
+
+
+
+<div style="height: 20px;">
+
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <form action="#" method="post" class="form">
+        <div class="get-in-touch">
+          <h3 class="text-center" style="color: #5b9fb9">
+            <b>Create New Domain </b></h3>
+
+
+          <hr>
+          <div class="form-group">
+            <label for="titleTextarea" class="label-for-info">Code :</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="code" [(ngModel)] ="new_domain.domainId"required/>
+          </div>
+
+          <div class="form-group">
+            <label for="active" class="label-for-info">Active :</label>
+            <input type="checkbox" class="form-control" name="active" id="active"  [(ngModel)] ="new_domain.active"/>
+          </div>
+
+          <div class="form-group">
+            <label for="titleTextarea" class="label-for-info">Name :</label>
+            <textarea class="form-control" id="titleTextarea" name="titleTextarea" rows="3" placeholder="Enter Title" [(ngModel)] ="new_domain.domainName"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="level" class="label-for-info">Level :</label>
+            <input type="number" class="form-control" name="level" id="level" placeholder="level" [(ngModel)] ="new_domain.level"required/>
+          </div>
+
+          <div class="form-group">
+            <label for="logo" class="label-for-info">Logo :</label>
+            <input type="text" class="form-control" name="logo" id="logo" placeholder="logo" [(ngModel)] ="new_domain.domainLogo"required/>
+          </div>
+
+
+          <div class="form-group">
+            <label for="isParent" class="label-for-info">isParent :</label>
+            <input type="checkbox" class="form-control" name="isParent" id="isParent"  [(ngModel)] ="new_domain.isParent"/>
+          </div>
+
+
+          <div class="w3-bar">
+            <button class="w3-btn  btn btn-success " (click)="createDomain()" name="save" id="save">Create</button>
+            <button class="w3-btn  btn btn-default  " (click)="ClearChanges()" name="clear" id="clear">Clear</button>
+          </div>
+
+          <!--  <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -28,49 +28,49 @@ function paramsToQueryString(params: DataTableParams) {
 
 
 @Injectable()
-export class RemoteService {
+export class ServiceProvidersRemoteService {
 
   constructor (private http: Http) {}
 
   query(params: DataTableParams) {
-    return this.http.get(BASE_URL + '/api/articles?' + paramsToQueryString(params)).toPromise()
-      .then((resp: Response) => resp.json());
+    return this.http.get(BASE_URL + '/api/serviceProviders/getAllforAdmin?' + paramsToQueryString(params)).toPromise()
+      .then((resp: Response) =>resp.json());
   }
 
 
 
-  // Create an Article
-  createArticle (body:any) {
+  // Create an serviceProviders
+  createServiceProviders (body:any) {
 
     let bodyString = JSON.stringify(body); // Stringify payload
     let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers }); // Create a request option
-    // console.log(BASE_URL + '/api/articles?' + body._id,body,options);
-    return this.http.post(BASE_URL + '/api/articles' , body, options).toPromise()
+    // console.log(BASE_URL + '/api/serviceProviders?' + body._id,body,options);
+    return this.http.post(BASE_URL + '/api/serviceProviders' , body, options).toPromise()
       .then((resp: Response) => resp.json() );
   }
 
-  // Update an Article
-  updateArticle (body:any) {
+  // Update an serviceProviders
+  updateServiceProviders (body:any) {
     let bodyString = JSON.stringify(body); // Stringify payload
     let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers }); // Create a request option
-   // console.log(BASE_URL + '/api/articles?' + body._id,body,options);
-    return this.http.put(BASE_URL + '/api/articles/' + body._id, body, options).toPromise()
-      .then((resp: Response) => { resp.json()} );
+   // console.log(BASE_URL + '/api/serviceProviders?' + body._id,body,options);
+    return this.http.put(BASE_URL + '/api/serviceProviders/' + body._id, body, options).toPromise()
+      .then((resp: Response) => {; resp.json()} );
   }
 
 
-  //get Article by Id
-  getArticleById(_id) {
-    return this.http.get(BASE_URL + '/api/articles/' + _id).toPromise()
+  //get serviceProviders by Id
+  getServiceProvidersById(_id) {
+    return this.http.get(BASE_URL + '/api/serviceProviders/' + _id).toPromise()
       .then((resp: Response) => resp.json());
   }
 
 
-  //remove Article by Id
-  removeArticleById(_id) {
-    return this.http.remove(BASE_URL + '/api/articles/' + _id).toPromise()
+  //remove serviceProviders by Id
+  removeServiceProvidersById(_id) {
+    return this.http.remove(BASE_URL + '/api/serviceProviders/' + _id).toPromise()
       .then((resp: Response) => resp.json());
   }
 

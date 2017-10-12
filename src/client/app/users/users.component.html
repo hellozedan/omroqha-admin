@@ -1,0 +1,71 @@
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+
+  <br><br>
+  <button (click)="goToCreate()">Create User</button>
+  <br><br>
+
+
+
+
+<!--table-->
+
+  <div class="container">
+    <hr>
+    <div class="row">
+      <h3 class="text-center" style="color: #5b9fb9">
+        <b>Users</b></h3>
+      <div class="panel panel-primary filterable">
+        <div class="panel-heading">
+<!--
+          <h3 class="panel-title">Users</h3>
+-->
+          <!--<div class="pull-right">
+            <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+          </div>-->
+        </div>
+        <table class="table">
+          <thead>
+         <!-- <tr class="filters">
+            <th><input type="text" class="form-control" placeholder="#" disabled></th>
+            <th><input type="text" class="form-control" placeholder="First Name" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Last Name" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Username" disabled></th>
+          </tr>-->
+         <tr>
+           <td> Id </td>
+           <td> Username</td>
+           <td> Phone Number</td>
+           <td> Actions</td>
+
+         </tr>
+          </thead>
+          <tbody>
+
+          <tr  *ngFor="let user of items">
+            <td>{{user.userId}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.mobileNumber}}</td>
+            <td>
+
+                <span style="cursor: pointer; color: red" (click)="DeleteUser(user)">
+                <span class="glyphicon glyphicon-trash" ></span>
+                </span>
+|
+              <span style="cursor: pointer; color: blue" (click)="rowClick(user)">
+                <span class="glyphicon glyphicon-edit" ></span>
+                </span>
+
+
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<router-outlet></router-outlet>

@@ -28,49 +28,47 @@ function paramsToQueryString(params: DataTableParams) {
 
 
 @Injectable()
-export class RemoteService {
+export class DomainRemoteService {
 
   constructor (private http: Http) {}
 
   query(params: DataTableParams) {
-    return this.http.get(BASE_URL + '/api/articles?' + paramsToQueryString(params)).toPromise()
+    return this.http.get(BASE_URL + '/api/domains/getAllforAdmin?' + paramsToQueryString(params)).toPromise()
       .then((resp: Response) => resp.json());
   }
 
 
 
-  // Create an Article
-  createArticle (body:any) {
+  // Create an Domain
+  createDomain (body:any) {
 
     let bodyString = JSON.stringify(body); // Stringify payload
     let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers }); // Create a request option
-    // console.log(BASE_URL + '/api/articles?' + body._id,body,options);
-    return this.http.post(BASE_URL + '/api/articles' , body, options).toPromise()
+    return this.http.post(BASE_URL + '/api/domains' , body, options).toPromise()
       .then((resp: Response) => resp.json() );
   }
 
-  // Update an Article
-  updateArticle (body:any) {
+  // Update an Domain
+  updateDomain (body:any) {
     let bodyString = JSON.stringify(body); // Stringify payload
     let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers }); // Create a request option
-   // console.log(BASE_URL + '/api/articles?' + body._id,body,options);
-    return this.http.put(BASE_URL + '/api/articles/' + body._id, body, options).toPromise()
+    return this.http.put(BASE_URL + '/api/domains/' + body._id, body, options).toPromise()
       .then((resp: Response) => { resp.json()} );
   }
 
 
-  //get Article by Id
-  getArticleById(_id) {
-    return this.http.get(BASE_URL + '/api/articles/' + _id).toPromise()
+  //get Domain by Id
+  getDomainById(_id) {
+    return this.http.get(BASE_URL + '/api/domains/' + _id).toPromise()
       .then((resp: Response) => resp.json());
   }
 
 
-  //remove Article by Id
-  removeArticleById(_id) {
-    return this.http.remove(BASE_URL + '/api/articles/' + _id).toPromise()
+  //remove Domain by Id
+  removeDomainById(_id) {
+    return this.http.remove(BASE_URL + '/api/domains/' + _id).toPromise()
       .then((resp: Response) => resp.json());
   }
 

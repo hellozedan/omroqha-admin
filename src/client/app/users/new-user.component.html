@@ -1,0 +1,59 @@
+
+
+
+
+
+
+<div style="height: 20px;">
+
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <form action="#" method="post" class="form">
+        <div class="get-in-touch">
+          <h3 class="text-center" style="color: #5b9fb9">
+            <b>Create New User </b></h3>
+
+
+          <hr>
+          <div class="form-group">
+            <label for="id" class="label-for-info">Id :</label>
+            <input type="text" class="form-control" name="id" id="id" placeholder="id" [(ngModel)] ="new_user.userId"required/>
+          </div>
+
+          <div class="form-group">
+            <label for="active" class="label-for-info">Active :</label>
+            <input type="checkbox" class="form-control" name="active" id="active"  [(ngModel)] ="new_user.active"/>
+          </div>
+
+
+          <div class="form-group">
+            <label for="username" class="label-for-info">Username :</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="username" [(ngModel)] ="new_user.username"required/>
+          </div>
+
+
+          <div class="form-group">
+            <label for="mobileNumber" class="label-for-info">Mobile Number :</label>
+            <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" placeholder="mobileNumber" [(ngModel)] ="new_user.mobileNumber"required/>
+          </div>
+
+
+          <div class="w3-bar">
+            <button class="w3-btn  btn btn-success " (click)="createUser()" name="save" id="save">Create</button>
+            <button class="w3-btn  btn btn-default  " (click)="ClearChanges()" name="clear" id="clear">Clear</button>
+          </div>
+
+          <!--  <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

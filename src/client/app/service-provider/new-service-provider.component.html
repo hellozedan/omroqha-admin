@@ -1,0 +1,70 @@
+
+
+<div style="height: 20px;">
+
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <form action="#" method="post" class="form">
+        <div class="get-in-touch">
+          <h3 class="text-center" style="color: #5b9fb9">
+            <b>Create New Service Provider </b></h3>
+
+
+          <hr>
+          <div class="form-group">
+            <label for="code" class="label-for-info">Code :</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="code" [(ngModel)] ="new_service_provider.serviceProviderId"required/>
+          </div>
+
+          <div class="form-group">
+            <label for="active" class="label-for-info">Active :</label>
+            <input type="checkbox" class="form-control" name="active" id="active"  [(ngModel)] ="new_service_provider.active"/>
+          </div>
+
+          <div class="form-group">
+            <label for="nameTextarea" class="label-for-info">Name :</label>
+            <textarea class="form-control" id="nameTextarea" name="nameTextarea" rows="3" placeholder="Enter Name" [(ngModel)] ="new_service_provider.serviceProviderName"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="addressTextarea" class="label-for-info">Address :</label>
+            <textarea class="form-control"  name="addressTextarea" id="addressTextarea" rows="3" placeholder="Enter Address" [(ngModel)] ="new_service_provider.address"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="serviceProviderDescTextarea" class="label-for-info">Service Provider Desc :</label>
+            <textarea class="form-control"  name="serviceProviderDescTextarea" id="serviceProviderDescTextarea" rows="3" placeholder="Enter Desc" [(ngModel)] ="new_service_provider.serviceProviderDesc"></textarea>
+          </div>
+
+
+          <div class="form-group">
+            <label for="domain" class="label-for-info">Domain :</label>
+            <input type="text" class="form-control" name="domain" id="domain" placeholder="domain" [(ngModel)] ="new_service_provider.domainId"required/>
+          </div>
+
+
+          <div class="form-group">
+            <label for="primary" class="label-for-info">Primary :</label>
+            <input type="checkbox" class="form-control" name="primary" id="primary"  [(ngModel)] ="new_service_provider.primary"/>
+          </div>
+
+
+          <div class="w3-bar">
+            <button class="w3-btn  btn btn-success " (click)="createItem()" name="save" id="save">Create</button>
+            <button class="w3-btn  btn btn-default  " (click)="ClearChanges()" name="clear" id="clear">Clear</button>
+          </div>
+
+          <!--  <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

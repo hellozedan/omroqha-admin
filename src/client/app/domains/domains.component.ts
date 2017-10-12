@@ -1,22 +1,22 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NameListService} from '../shared/name-list/name-list.service';
 import {DataTable, DataTableResource} from 'angular-4-data-table';
-import {RemoteService} from "./articles-remote-service";
+import {DomainRemoteService} from "./domains-remote-service";
 import {Router} from '@angular/router';
-import {ArticlesRoutingModule} from "./articles-routing.module";
+import {DomainsRoutingModule} from "./domains-routing.module";
 
 /**
  * This class represents the lazy loaded HomeComponent.
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-home',
-  templateUrl: 'articles.component.html',
-  styleUrls: ['articles.component.css'],
+  selector: 'sd-domains',
+  templateUrl: 'domains.component.html',
+  styleUrls: ['domains.component.css'],
 })
-export class ArticlesComponent implements OnInit {
+export class DomainsComponent implements OnInit {
 
-  articlesArray=[
+  domainsArray=[
     {
       title:'title',
       subtitle:'this is a sub title',
@@ -28,34 +28,34 @@ export class ArticlesComponent implements OnInit {
     }
   ];
   items=[];
-  // items  = this.articlesArray;
   itemCount = 0;
   ngOnInit() {
   }
 
-  constructor(private remoteService: RemoteService, private router: Router) {
+  constructor(private remoteService: DomainRemoteService, private router: Router) {
 
   }
 
   reloadItems(params) {
     this.remoteService.query(params).then(result => {
+      console.log(result);
       this.items = result.items;
       this.itemCount = result.count;
     });
   }
 
   goToCreate(){
-    this.router.navigate(['articles/new']);
+    this.router.navigate(['domains/new']);
   }
   rowClick (e:any) {
-    this.router.navigate(['articles',e.row.item._id]);
+    this.router.navigate(['domains',e.row.item._id]);
       console.log(e.row.item._id);
   }
 
 
-  DeleteArticle(item:any){
+  DeleteDomain(item:any){
 
-    this.remoteService.removeArticleById(item._id)
+    this.remoteService.removeDomainById(item._id)
     console.log('hhhhhhhhh');
   }
 }
